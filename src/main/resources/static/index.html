@@ -98,7 +98,7 @@
     }
 
     let counter = 0
-    function newMessage(message) { alert(JSON.stringify(message));
+    function newMessage(message) { //alert(JSON.stringify(message));
       message.id = counter++ // vue transitions need an id
       data.messages.unshift(message)
     }

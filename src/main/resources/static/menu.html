@@ -8,11 +8,11 @@
 
 <body>
 <div class="navbar">
-  <a id="nav0" href="#" class="active">Veggies</a>
-  <a id="nav1" href="#">Meat</a>
-  <a id="nav2" href="#">Fish</a>
-  <a id="nav3" href="#">Deal</a>
-  <a id="nav4" href="#">Recipes</a>
+  <a id="nav0" href="grid.html" class="active">Veggies</a>
+  <a id="nav1" href="grid.html">Meat</a>
+  <a id="nav2" href="grid.html">Fish</a>
+  <a id="nav3" href="grid.html">Deal</a>
+  <a id="nav4" href="grid.html">Recipes</a>
 </div>
 
 <div class="main">
@@ -71,11 +71,17 @@
 		var bLeft = false;
 		var bRight = false;
 		var iCurrent = parseInt(iPosition);
+		var bBack = false;
+		var bClick = false;
 		
 		if (iGesture == 'left') {
 			bLeft = true;
 		} else if (iGesture == 'right') {
 			bRight = true;
+		} else if (iGesture == "back") {
+			bBack = true;
+		} else if (iGesture == "click") {
+			bClick = true;
 		}
 		
 		if (bLeft == true && iPosition > 0) {
@@ -84,6 +90,12 @@
 		} else if (bRight == true && iPosition < (iMenuCount-1)) {
 			var iPos = iCurrent+1;
 			navigateMenu(iPos, iPosition);
+		} else if (bBack == true) {
+			window.history.back();
+		} else if (bClick == true) {
+			var iPos = iCurrent;
+			var cHref = $('#nav'+ iPos).attr("href");
+			window.location.href = cHref;
 		}
 	}
 

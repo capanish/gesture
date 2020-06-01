@@ -89,11 +89,14 @@
     const apiBaseUrl = ''
 
 	var iMenuCount = 0;
+	var iColCount = parseInt($('#colnum').html());
 
 	$('a').each(function(index, value){
 		iMenuCount++;
 	});
 
+	var iRowCount = parseInt(iMenuCount / iColCount);
+	
     const connection = new signalR.HubConnectionBuilder()
       .withUrl(`${apiBaseUrl}/signalr`)
       .withAutomaticReconnect()

@@ -8,10 +8,10 @@
 
 <body>
 <div class="sidenav">
-  <a id="nav0" href="#about" class="sidenav-current">About</a>
-  <a id="nav1" href="#services" class="sidenav-other">Services</a>
-  <a id="nav2" href="#clients" class="sidenav-other">Clients</a>
-  <a id="nav3" href="#contact" class="sidenav-other">Contact</a>
+  <a id="nav0" href="menu.html" class="sidenav-current">About</a>
+  <a id="nav1" href="menu.html" class="sidenav-other">Services</a>
+  <a id="nav2" href="menu.html" class="sidenav-other">Clients</a>
+  <a id="nav3" href="menu.html" class="sidenav-other">Contact</a>
 </div>
 
 <div class="main">
@@ -136,7 +136,7 @@
 				window.history.back();
 			} else if (bClick == true) {
 				var iPos = iCurrent;
-				var cHref = $('#anchor'+ iPos).attr("href");
+				var cHref = "menu.html";
 				window.location.href = cHref;
 			}
 		}
